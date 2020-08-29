@@ -12,6 +12,9 @@ marshmallow-sqlalchemy = "*"
 flask-script = "*"
 marshmallow = "*"
 flask-pymongo = "*"
+flask-login = "*"
+wtforms = "*"
+email-validator = "*"
 
 [requires]
 python_version = "3.8"

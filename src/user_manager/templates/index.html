@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+    Ur API!
+</div>
+<form action="/gen_token" method="POST">
+<button type="submit">Generate Token!</button>
+</form>
+<ul>
+    {% for akey in akeys%}
+        <div>
+            <form action="/revoke_token" method="post">
+            <input readonly type="text" value="{{akey}}" name="AS" />
+            <button type="submit">Revoke!</button>
+            </form>
+    </div>
+        {% endfor %}
+
+</ul>
+
+{% endblock %}

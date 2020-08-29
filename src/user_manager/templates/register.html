@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% block content%}
+{% from '_formHelper.html' import render_field with context %}
+<div class="global-container">
+    <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">Register to Ur_API</h3>
+            <div class="card-text">
+                <!--
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+                <form method="POST" action="/register">
+                    <!-- to error: add class "has-danger" -->
+                    {{form.csrf_token}}
+          {{render_field(form.email_id,cls="form-control form-control-sm",errcls='is-invalid',placeholder='User EmailId')}}
+          {{render_field(form.password,cls="form-control form-control-sm",errcls='is-invalid',placeholder='Ur Password')}}
+          {{render_field(form.confirm_password,cls="form-control form-control-sm",errcls='is-invalid',placeholder='Confirm Password')}}
+          
+                   
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Sign Up!
+                    </button>
+
+                    <div class="sign-up">
+                        Have an account? <a href="#">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

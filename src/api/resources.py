@@ -49,7 +49,7 @@ class Details(Resource):
             post_data = formData.lists()
             post_dict = dict()
             for k, v in post_data:
-                post_dict[k] = v[0] if len(v) is 1 else v
+                post_dict[k] = v[0] if len(v) == 1 else v
 
             update_data = {"$set": post_dict}
 
